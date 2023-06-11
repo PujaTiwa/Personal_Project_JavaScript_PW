@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        }
+    
+    button {
+        padding: 1.6rem;
+        margin: 500px;
+        background-color: #050505;
+        border-radius: 1.2rem;
+        color: white;
+        font-size: 24px;
+        font-weight: 600;
+        border: none;
+        box-shadow: 0 6px 0px 12px #27a852;
+    }
+    button:hover{
+        background: #050404e0;
+        cursor: pointer;
+        font-size: 42px;
+        font-family: cursive;
+        box-shadow: 0 15px 12px 18px #db3c3c;
+        text-shadow: #3cdb44;;
+    }
+    
+</style>
+<body>
+    <button id="button">Click Again</button>
+
+<script>
+    let submit = document.getElementById("button")
+    const randomColor = () => {
+        let val = "21E03B4F59A786CD";
+        let cons = "#";
+        for (let i=0; i<6; i++) {
+            cons = cons + val[Math.floor(Math.random() * 16)];
+        }
+        return cons;
+    };
+
+    function click() {
+       document.body.style.backgroundColor = randomColor();
+    }
+    submit.addEventListener("click", click);
+
+</script>
+</body>
+</html>
